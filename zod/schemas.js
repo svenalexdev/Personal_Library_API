@@ -6,22 +6,6 @@ const userSchema = z.object({
     email: z.email("Invalid email."),
 });
 
-const genreValues = [
-    "History",
-    "Science Fiction",
-    "Fantasy",
-    "Thriller",
-    "Romance",
-    "Comedy",
-    "Drama",
-    "Horror",
-    "Science",
-    "Travel",
-    "Other",
-];
-
-const genrePool = z.enum(genreValues);
-
 const bookSchema = z.object({
     title: z.string().min(1, "Title is required."),
     author: z.string().min(1, "Author is required."),
@@ -31,7 +15,19 @@ const bookSchema = z.object({
         .gte(1000, "Release year must be a 4-digit number.")
         .lte(9999, "Release year must be a 4-digit number."),
     // TBD how error message can be included in genre
-    genre: genrePool,
+    genre: z.enum([
+        "History",
+        "Science Fiction",
+        "Fantasy",
+        "Thriller",
+        "Romance",
+        "Comedy",
+        "Drama",
+        "Horror",
+        "Science",
+        "Travel",
+        "Other",
+    ]),
     isbn: z.union([
         z
             .string()
