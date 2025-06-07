@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 const readingListSchema = new Schema({
-    bookRefIf: {
+    bookRefId: {
         type: Schema.Types.ObjectId,
         ref: "Book",
         required: true,
