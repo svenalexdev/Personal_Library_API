@@ -11,6 +11,8 @@ const bookSchema = new Schema(
         author: {
             type: String,
             required: [true, "Author is required"],
+            minLength: [1, "Minimum length is 1 character"],
+            maxLength: 255,
         },
         releaseYear: {
             type: Number,
