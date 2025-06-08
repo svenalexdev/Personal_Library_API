@@ -59,4 +59,4 @@ const bookSchema = z.object({
         }),
 });
 
-export { userSchema, bookSchema };
+export { userSchema, bookSchema, readingListSchema };

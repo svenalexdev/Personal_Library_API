@@ -14,7 +14,7 @@ export const createUser = async (req, res) => {
 
     if (found) throw new Error("Email already exists", { cause: 400 });
     const user = await User.create(req.sanitizedBody);
-    res.json(user);
+    res.status(201).json(user);
 };
 
 export const getUserById = async (req, res) => {
