@@ -1,5 +1,5 @@
 import { isValidObjectId } from "mongoose";
-import Book from "../models/Book";
+import Book from "../models/Book.js";
 
 const getBooks = async (req, res) => {
     const books = await Book.find();

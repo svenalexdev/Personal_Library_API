@@ -10,7 +10,7 @@ import {
     addBookToList,
     updateBookInList,
     removeBookFromList,
-} from "../controllers/users";
+} from "../controllers/users.js";
 
 const userRouter = Router();
 

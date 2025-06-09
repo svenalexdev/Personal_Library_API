@@ -1,12 +1,12 @@
 import { isValidObjectId } from "mongoose";
 import User from "../models/User.js";
 
-export const getUsers = async (req, res) => {
+const getUsers = async (req, res) => {
     const users = await User.find().lean();
     res.json(users);
 };
 
-export const createUser = async (req, res) => {
+const createUser = async (req, res) => {
     // Destructuring
     const { email } = req.sanitizedBody;
 
@@ -17,7 +17,7 @@ export const createUser = async (req, res) => {
     res.status(201).json(user);
 };
 
-export const getUserById = async (req, res) => {
+const getUserById = async (req, res) => {
     const { id } = req.params;
 
     if (!isValidObjectId(id)) throw new Error("Invalid id", { cause: 400 });
