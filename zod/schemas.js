@@ -16,7 +16,6 @@ const bookSchema = z.object({
     title: z.string().min(1, "Title is required."),
     author: z.string().min(1, "Author is required."),
     releaseYear: z
-        .number()
         .int()
         .gte(1000, "Release year must be a 4-digit number.")
         .lte(9999, "Release year must be a 4-digit number."),
